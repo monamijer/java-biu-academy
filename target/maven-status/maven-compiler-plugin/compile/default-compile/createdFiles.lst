@@ -11,10 +11,14 @@ views/ClasseView.class
 views/MenuPrincipalView$2.class
 models/Ensemble.class
 views/FaculteView.class
+views/ClasseView$2.class
 models/CoursDAO.class
 controllers/ClasseController.class
+views/GradeView$2.class
+views/EnsembleView$2.class
 models/EnsembleDAO.class
 models/Cours.class
+views/CoursView$2.class
 views/ClasseView$1.class
 views/EnsembleView.class
 models/ClasseDAO.class

@@ -51,6 +51,6 @@ public class Faculte {
     
     @Override
     public String toString() {
-        return codeFac + " - " + nomFac;
+        return nomFac + " (" + codeFac + ")";
     }
 }

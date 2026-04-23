@@ -14,7 +14,6 @@ public class GradeController {
     }
     
     public boolean ajouterGrade(String nomGrade, String niveau, String description) {
-        // Validation
         if (nomGrade == null || nomGrade.trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "❌ Le nom du grade est obligatoire !", "Erreur", JOptionPane.ERROR_MESSAGE);
             return false;
@@ -53,6 +52,8 @@ public class GradeController {
         
         if (success) {
             JOptionPane.showMessageDialog(null, "✅ Grade modifié avec succès !", "Succès", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "❌ Erreur lors de la modification", "Erreur", JOptionPane.ERROR_MESSAGE);
         }
         
         return success;
@@ -70,6 +71,8 @@ public class GradeController {
             boolean success = gradeDAO.supprimer(id);
             if (success) {
                 JOptionPane.showMessageDialog(null, "✅ Grade supprimé avec succès", "Succès", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "❌ Erreur lors de la suppression", "Erreur", JOptionPane.ERROR_MESSAGE);
             }
             return success;
         }

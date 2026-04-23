@@ -9,6 +9,7 @@ public class Ensemble {
     private String nationalite;
     private String genre;
     private int gradeFk;
+    private String gradeNom;  // Pour l'affichage du nom du grade
     private Date dateNaissance;
     private String telephone;
     private String email;
@@ -17,8 +18,7 @@ public class Ensemble {
     // Constructeurs
     public Ensemble() {}
     
-    public Ensemble(String nom, String prenom, String nationalite, String genre, 
-                   int gradeFk, Date dateNaissance, String telephone, String email) {
+    public Ensemble(String nom, String prenom, String nationalite, String genre, int gradeFk, Date dateNaissance, String telephone, String email) {
         this.nom = nom;
         this.prenom = prenom;
         this.nationalite = nationalite;
@@ -39,6 +39,8 @@ public class Ensemble {
     public String getPrenom() { return prenom; }
     public void setPrenom(String prenom) { this.prenom = prenom; }
     
+    public String getNomComplet() { return prenom + " " + nom; }
+    
     public String getNationalite() { return nationalite; }
     public void setNationalite(String nationalite) { this.nationalite = nationalite; }
     
@@ -47,6 +49,9 @@ public class Ensemble {
     
     public int getGradeFk() { return gradeFk; }
     public void setGradeFk(int gradeFk) { this.gradeFk = gradeFk; }
+    
+    public String getGradeNom() { return gradeNom; }
+    public void setGradeNom(String gradeNom) { this.gradeNom = gradeNom; }
     
     public Date getDateNaissance() { return dateNaissance; }
     public void setDateNaissance(Date dateNaissance) { this.dateNaissance = dateNaissance; }
@@ -60,12 +65,8 @@ public class Ensemble {
     public Date getDateCreation() { return dateCreation; }
     public void setDateCreation(Date dateCreation) { this.dateCreation = dateCreation; }
     
-    public String getNomComplet() {
-        return prenom + " " + nom;
-    }
-    
     @Override
     public String toString() {
-        return getNomComplet();
+        return prenom + " " + nom + (gradeNom != null ? " (" + gradeNom + ")" : "");
     }
 }
